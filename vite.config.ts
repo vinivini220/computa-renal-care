@@ -8,8 +8,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  // 👇 Repo name path exactly match பண்ணுங்க
-  base: "/computa-renal-care/",
+  // base: "/computa-renal-care/",
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
