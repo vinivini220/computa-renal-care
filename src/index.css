@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Medical Theme Design System - COMPUTATIONAL Trial
+All colors are HSL values for consistent theming across light/dark modes.
+Medical color palette: Professional blue, clean white, modern grey
+*/
+
+@layer base {
+  :root {
+    /* Medical Theme Colors */
+    --background: 0 0% 100%;
+    --foreground: 210 22% 22%;
+    
+    /* Medical Blue Palette */
+    --medical-blue: 210 100% 45%;
+    --medical-blue-light: 210 100% 85%;
+    --medical-blue-dark: 210 100% 25%;
+    
+    /* Professional Greys */
+    --medical-grey: 210 8% 50%;
+    --medical-grey-light: 210 8% 95%;
+    --medical-grey-dark: 210 8% 25%;
+    
+    /* Accent Colors */
+    --medical-accent: 195 100% 50%;
+    --medical-success: 142 76% 36%;
+    --medical-warning: 38 92% 50%;
+    
+    /* Gradients */
+    --gradient-medical: linear-gradient(135deg, hsl(var(--medical-blue)), hsl(var(--medical-accent)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--medical-grey-light)));
+    
+    /* Shadows */
+    --shadow-medical: 0 4px 20px hsl(var(--medical-blue) / 0.15);
+    --shadow-soft: 0 2px 10px hsl(var(--medical-grey) / 0.1);
+    
+    /* Animations */
+    --transition-medical: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s ease-out;
+
+    /* Shadcn Component Colors - Medical Theme */
+    --card: 0 0% 100%;
+    --card-foreground: 210 22% 22%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 22% 22%;
+
+    --primary: 210 100% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 8% 95%;
+    --secondary-foreground: 210 22% 22%;
+
+    --muted: 210 8% 95%;
+    --muted-foreground: 210 8% 50%;
+
+    --accent: 195 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 8% 90%;
+    --input: 210 8% 90%;
+    --ring: 210 100% 45%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 22% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  /* Medical Theme Utilities */
+  .medical-gradient {
+    background: var(--gradient-medical);
+  }
+  
+  .medical-shadow {
+    box-shadow: var(--shadow-medical);
+  }
+  
+  .medical-transition {
+    transition: var(--transition-medical);
+  }
+  
+  /* Animation Classes */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .heartbeat {
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  
+  /* Medical Icon Animations */
+  .pulse-medical {
+    animation: pulseMedical 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulseMedical {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+  }
+}
+
+@layer components {
+  /* Hero Section Styles */
+  .hero-section {
+    @apply min-h-screen bg-gradient-to-br from-blue-50 to-background relative overflow-hidden;
+  }
+  
+  .hero-content {
+    @apply relative z-10 max-w-6xl mx-auto px-6 py-20 text-center;
+  }
+  
+  /* Info Card Styles */
+  .info-card {
+    @apply bg-card rounded-xl p-6 shadow-lg border border-border medical-transition hover:shadow-xl hover:-translate-y-1;
+  }
+  
+  /* Section Styles */
+  .medical-section {
+    @apply py-16 px-6 relative;
+  }
+  
+  .section-background {
+    @apply absolute inset-0 bg-cover bg-center bg-no-repeat;
+  }
+  
+  .section-overlay {
+    @apply absolute inset-0 bg-background/90;
+  }
+}
