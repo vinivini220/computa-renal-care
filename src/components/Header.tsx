@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Heart, Activity } from 'lucide-react';
-
+import logoImage from '@/assets/image.png';   // ✅ correct import
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,13 +32,15 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <div className="flex items-center space-x-2">
-              <h1 className="text-xl font-bold text-primary">
-                COMPUTATIONAL
-              </h1>
+              {/* ✅ Logo image here */}
+              <img
+                src={logoImage}
+                alt="Logo"
+                className="h-8 w-auto"
+              />
               <Activity className="w-6 h-6 text-accent pulse-medical" />
             </div>
           </div>
-
 
           {/* Desktop Navigation */}
           <nav className="hidden md:block">
