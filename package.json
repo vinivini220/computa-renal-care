@@ -3,14 +3,11 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "homepage": "https://vinivini220.github.io/computa-renal-care/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
 
   "dependencies": {
