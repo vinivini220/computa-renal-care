@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://vinidevdev.github.io/computa-renal-care/",
+  "homepage": "https://vinivini220.github.io/computa-renal-care/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
